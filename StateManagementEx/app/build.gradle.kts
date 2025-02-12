@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.hilt)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.kotlin.parcelize)
 }
 
 android {
@@ -41,6 +42,10 @@ android {
     }
 }
 
+ksp {
+    arg("circuit.codegen.mode", "hilt")
+}
+
 dependencies {
 
     implementation(libs.androidx.core.ktx)
@@ -57,6 +62,10 @@ dependencies {
     implementation(libs.mavericks.hilt)
     implementation(libs.hilt)
     ksp(libs.hilt.compiler)
+
+    implementation(libs.circuit.foundation)
+    api(libs.circuit.codegen.annotation)
+    ksp(libs.circuit.codegen.ksp)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
