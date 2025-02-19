@@ -57,15 +57,26 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
 
+    //mavericks
     implementation(libs.mavericks)
     implementation(libs.mavericks.compose)
     implementation(libs.mavericks.hilt)
+
+    //hilt
     implementation(libs.hilt)
     ksp(libs.hilt.compiler)
 
+    //circuit
     implementation(libs.circuit.foundation)
     api(libs.circuit.codegen.annotation)
     ksp(libs.circuit.codegen.ksp)
+
+    //orbit
+    implementation(libs.orbit.viewmodel)
+    implementation(libs.orbit.compose)
+
+    //viewmodel
+    implementation(libs.lifecycle.viewmodel)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
